@@ -5,7 +5,7 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const { merge } = require('webpack-merge');
 
-const commonConfig = require('./webpack.common');
+const commonConfig = require('./webpack.common.cjs');
 
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 

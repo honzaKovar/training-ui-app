@@ -1,7 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { merge } = require('webpack-merge');
-const commonConfig = require('./webpack.common');
+const commonConfig = require('./webpack.common.cjs');
 
 const devConfig = {
 	mode: "development",
