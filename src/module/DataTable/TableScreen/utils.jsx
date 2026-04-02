@@ -1,14 +1,17 @@
 import { DateTime } from 'asab_webui_components';
+import { Link } from 'react-router';
 
 export const getColumns = (t) => [
   {
     title: t('Training|Username'),
     thStyle: { minWidth: '6rem' },
     render: ({ row }) => (
-      <span className="id-tooltip-wrapper">
-        {row.username}
-        <span className="id-tooltip">{row.id}</span>
-      </span>
+      <Link to={`/detail/${row.id}`}>
+        <span className="id-tooltip-wrapper">
+          {row.username}
+          <span className="id-tooltip">{row.id}</span>
+        </span>
+      </Link>
     ),
   },
   {
