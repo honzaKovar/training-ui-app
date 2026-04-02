@@ -1,0 +1,22 @@
+.id-tooltip-wrapper {
+  position: relative;
+  cursor: default;
+
+  .id-tooltip {
+    visibility: hidden;
+    position: absolute;
+    bottom: 125%;
+    left: 0;
+    background: #333;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    z-index: 10;
+  }
+
+  &:hover .id-tooltip {
+    visibility: visible;
+  }
+}

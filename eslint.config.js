@@ -204,6 +204,7 @@ export default [
       ...prettierConfig.rules,
       'prettier/prettier': 'error',
       'react/react-in-jsx-scope': 'off',
+      'react/prop-types': 'off',
       quotes: ['error', 'single', { avoidEscape: true }],
     },
     settings: {
