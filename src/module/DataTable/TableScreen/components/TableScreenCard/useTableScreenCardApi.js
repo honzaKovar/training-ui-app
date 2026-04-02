@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { DATA_TABLE_API_URL } from '../../../constants/apiUrls.js';
+import { DATA_TABLE_API_URL } from '../../../../../constants/apiUrls.js';
 
 export const useTableScreenCardApi = () => {
   const loader = async ({ params }) => {

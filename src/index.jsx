@@ -7,7 +7,7 @@ import { Application, I18nModule, AboutModule } from 'asab_webui_shell';
 
 (async function init() {
   // Dynamically import your module(s)
-  const { default: TableApplicationModule } = await import('./module/index.jsx');
+  const { default: TableApplicationModule } = await import('./module/DataTable/index.jsx');
 
   const config = {
     title: 'TeskaLabs Training UI App',

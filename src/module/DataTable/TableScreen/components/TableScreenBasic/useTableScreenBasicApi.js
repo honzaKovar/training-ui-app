@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-import { DATA_TABLE_API_URL } from '../../../constants/apiUrls.js';
+import { DATA_TABLE_API_URL } from '../../../../../constants/apiUrls.js';
 
 const limit = 20;
 
