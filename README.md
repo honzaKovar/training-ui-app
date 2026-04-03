@@ -11,6 +11,7 @@ Frontend training app built on top of TeskaLabs training scaffold — features a
 ### Technical decisions
 
 - Implemented both `DataTable2` and `DataTableCard2` approaches for the table screen — the task spec mentions `DataTable2` with pagination, however from reading the source `DataTable2` is a purely presentational component with no pagination built in. Pagination is handled by `DataTableCard2` which wraps it internally. A toggle allows switching between both implementations.
+- For the `DataTable2` implementation, built a custom `TablePagination` component with client-side pagination.
 - Used `axios` for data fetching with custom hooks per screen to separate concerns
 - Added `eslint` and `prettier` for code quality
 - Translations for both English and Czech
@@ -29,8 +30,6 @@ Built with MUI and Leaflet. Select a user from the autocomplete, the app fetches
 ---
 
 ## Original Task
-
-# TeskaLabs Training UI App
 
 This is a training task for developers who like challenges :)
 
