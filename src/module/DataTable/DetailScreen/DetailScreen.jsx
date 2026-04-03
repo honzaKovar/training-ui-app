@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { ResultCard, Spinner } from 'asab_webui_components';
 import { useTranslation } from 'react-i18next';
 

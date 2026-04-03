@@ -12,6 +12,18 @@ export const useIPGeolocationApi = () => {
   const [detailLoading, setDetailLoading] = useState(false);
   const [geoError, setGeoError] = useState(null);
 
+  const getUserDetail = async (id) => {
+    const { data } = await axios.get(`${DETAIL_API_URL}/${id}`);
+
+    return data;
+  };
+
+  const getGeoData = async (ipAddress) => {
+    const { data } = await axios.get(`${GEO_API_URL}/${ipAddress}?token=${IPINFO_TOKEN}`);
+
+    return data;
+  };
+
   const handleUserSelect = async (_, user) => {
     setSelectedUserDetail(null);
     setGeoData(null);
@@ -22,26 +34,20 @@ export const useIPGeolocationApi = () => {
     setDetailLoading(true);
 
     try {
-      const { data } = await axios.get(`${DETAIL_API_URL}/${user.id}`);
-      setSelectedUserDetail(data);
+      const detail = await getUserDetail(user.id);
 
-      const { data: geoData } = await axios.get(`${GEO_API_URL}/${data.ip_address}?token=${IPINFO_TOKEN}`);
+      setSelectedUserDetail(detail);
 
-      if (geoData.bogon || !geoData.loc) {
-        setGeoError(`${t('Training|Unable to locate IP')} ${data.ip_address}`);
+      const geo = await getGeoData(detail.ip_address);
 
+      if (geo.bogon || !geo.loc) {
+        setGeoError(`${t('Training|Unable to locate IP')} ${detail.ip_address}`);
         return;
       }
 
-      const [latitude, longitude] = geoData.loc.split(',').map(Number);
+      const [latitude, longitude] = geo.loc.split(',').map(Number);
 
-      setGeoData({ ...geoData, latitude, longitude });
-
-      if (geoData.error) {
-        setGeoError(geoData.reason);
-
-        return;
-      }
+      setGeoData({ ...geo, latitude, longitude });
     } catch (error) {
       setGeoError(error);
     } finally {
