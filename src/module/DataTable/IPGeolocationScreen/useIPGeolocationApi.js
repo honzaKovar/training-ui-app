@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { DETAIL_API_URL } from '../../../constants/apiUrls.js';
+import { DETAIL_API_URL, GEO_API_URL } from '../../../constants/apiUrls.js';
 
 export const useIPGeolocationApi = () => {
   const { t } = useTranslation();
@@ -25,7 +25,7 @@ export const useIPGeolocationApi = () => {
       const { data } = await axios.get(`${DETAIL_API_URL}/${user.id}`);
       setSelectedUserDetail(data);
 
-      const { data: geoData } = await axios.get(`/api/geo/${data.ip_address}`);
+      const { data: geoData } = await axios.get(`${GEO_API_URL}/${data.ip_address}`);
 
       if (geoData.latitude === null || geoData.longitude === null) {
         setGeoError(`${t('Training|Unable to locate IP')} ${data.ip_address}`);
