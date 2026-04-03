@@ -104,6 +104,7 @@
     "IP Geolocation": "IP Geolocation",
     "Select User": "Select User",
     "IP Address": "IP Address",
+    "Loading": "Loading",
     "Location Details": "Location Details",
     "City": "City",
     "Region": "Region",
@@ -111,6 +112,7 @@
     "Timezone": "Timezone",
     "Latitude": "Latitude",
     "Longitude": "Longitude",
-    "Unable to locate IP": "Unable to locate IP"
+    "Unable to locate IP": "Unable to locate IP",
+    "Users": "Users"
   }
 }

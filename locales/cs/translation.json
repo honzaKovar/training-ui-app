@@ -104,6 +104,7 @@
     "IP Geolocation": "IP Geolokace",
     "Select User": "Vyberte uživatele",
     "IP Address": "IP adresa",
+    "Loading": "Načítání",
     "Location Details": "Detaily polohy",
     "City": "Město",
     "Region": "Region",
@@ -111,6 +112,7 @@
     "Timezone": "Časové pásmo",
     "Latitude": "Zeměpisná šířka",
     "Longitude": "Zeměpisná délka",
-    "Unable to locate IP": "IP adresu nelze lokalizovat"
+    "Unable to locate IP": "IP adresu nelze lokalizovat",
+    "Users": "Uživatelé"
   }
 }
