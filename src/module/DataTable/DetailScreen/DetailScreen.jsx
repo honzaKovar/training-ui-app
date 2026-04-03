@@ -18,7 +18,7 @@ export const DetailScreen = () => {
   return (
     <div className="d-flex flex-column gap-3 p-3">
       <ResultCard>
-        <button className="btn btn-outline-primary" onClick={() => (window.location.href = '/')}>
+        <button className="btn btn-outline-primary" onClick={() => window.history.back()}>
           <i className="bi bi-arrow-left me-2" />
           {t('Training|Back to Table')}
         </button>
