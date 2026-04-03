@@ -1,5 +1,37 @@
 # TeskaLabs Training UI App
 
+Frontend training app built on top of TeskaLabs training scaffold — features a paginated data table, detail view, and an IP geolocation screen with interactive map powered by Leaflet and MUI.
+
+## Live Demo
+
+[https://honzakovar.github.io/training-ui-app/](https://honzakovar.github.io/training-ui-app/)
+
+## My Implementation
+
+### Technical decisions
+
+- Implemented both `DataTable2` and `DataTableCard2` approaches for the table screen — the task spec mentions `DataTable2` with pagination, however from reading the source `DataTable2` is a purely presentational component with no pagination built in. Pagination is handled by `DataTableCard2` which wraps it internally. A toggle allows switching between both implementations.
+- Used `axios` for data fetching with custom hooks per screen to separate concerns
+- Added `eslint` and `prettier` for code quality
+- Translations for both English and Czech
+
+### Custom screen — IP Geolocation
+
+Built with MUI and Leaflet. Select a user from the autocomplete, the app fetches their detail and automatically looks up the IP geolocation via [ipinfo.io](https://ipinfo.io), displaying the result on an interactive map.
+
+> **Note:** Some users in the dataset have private or reserved IP addresses (e.g. `192.168.x.x`) which cannot be geolocated. An error message is displayed in these cases.
+
+### Stack additions
+- `@mui/material` — UI components for the custom screen
+- `leaflet` + `react-leaflet` — interactive map
+- `eslint` + `prettier` — code quality
+
+---
+
+## Original Task
+
+# TeskaLabs Training UI App
+
 This is a training task for developers who like challenges :)
 
 ## Prerequisities
@@ -60,9 +92,3 @@ This task has 3 parts to be extended/implemented - Table, Detail and your custom
 - Use bootstrap icons for Table header and Detail card.
 - Implement navigation back from Detail screen to Table screen.
 - Build & deploy the application (provide the functional link).
-
-## The expected output
-
-- Attach the link of your public github/gitlab where the TeskaLabs Training UI App is being cloned and extended. We will go through the code.
-
-- Did you complete this task? Send the result (links) to [frantisek.pesek@teskalabs.com](mailto:frantisek.pesek@teskalabs.com)
