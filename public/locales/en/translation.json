@@ -100,6 +100,17 @@
     "phone_number": "Phone Number",
     "ip_address": "IP Address",
     "mac_address": "MAC Address",
-    "Back to Table": "Back to Table"
+    "Back to Table": "Back to Table",
+    "IP Geolocation": "IP Geolocation",
+    "Select User": "Select User",
+    "IP Address": "IP Address",
+    "Location Details": "Location Details",
+    "City": "City",
+    "Region": "Region",
+    "Country": "Country",
+    "Timezone": "Timezone",
+    "Latitude": "Latitude",
+    "Longitude": "Longitude",
+    "Unable to locate IP": "Unable to locate IP"
   }
 }

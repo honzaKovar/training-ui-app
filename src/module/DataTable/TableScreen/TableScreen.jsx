@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import './TableScreen.scss';
-import { TableScreenBasic, TableScreenCard } from './components';
+import { TableScreenBasic, TableScreenCard } from './components/index.js';
 
 /**
  * TableScreen renders two implementations of the data table to address an ambiguity in the task spec.
