@@ -1,7 +1,8 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { merge } = require('webpack-merge');
 const commonConfig = require('./webpack.common.cjs');
+const Dotenv = require('dotenv-webpack');
 
 const devConfig = {
   mode: 'development',
@@ -13,15 +14,6 @@ const devConfig = {
     historyApiFallback: true,
     open: true,
     hot: true,
-    proxy: [
-      {
-        context: ['/api/geo'],
-        target: 'https://freeipapi.com',
-        changeOrigin: true,
-        pathRewrite: { '^/api/geo': '/api/json' },
-        secure: true,
-      },
-    ],
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -30,6 +22,7 @@ const devConfig = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../public/index.html'),
     }),
+    new Dotenv(),
   ],
 };
 

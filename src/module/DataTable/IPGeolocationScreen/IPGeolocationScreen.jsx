@@ -104,10 +104,11 @@ export const IPGeolocationScreen = () => {
           <Paper sx={{ p: 2, minWidth: 350 }}>
             <Typography variant="h6">{t('Training|Location Details')}</Typography>
             {[
-              { label: t('Training|City'), value: geoData.cityName },
-              { label: t('Training|Region'), value: geoData.regionName },
-              { label: t('Training|Country'), value: geoData.countryName },
-              { label: t('Training|Timezone'), value: geoData.timeZones?.[0] },
+              { label: t('Training|City'), value: geoData.city },
+              { label: t('Training|Region'), value: geoData.region },
+              { label: t('Training|Country'), value: geoData.country },
+              { label: t('Training|Organisation'), value: geoData.org },
+              { label: t('Training|Timezone'), value: geoData.timezone },
               { label: t('Training|Latitude'), value: geoData.latitude },
               { label: t('Training|Longitude'), value: geoData.longitude },
             ].map(({ label, value }) => (

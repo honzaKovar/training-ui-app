@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const { merge } = require('webpack-merge');
+const Dotenv = require('dotenv-webpack');
 
 const commonConfig = require('./webpack.common.cjs');
 
@@ -35,6 +36,7 @@ const buildConfig = {
         { from: 'public/locales', to: 'locales' },
       ],
     }),
+    new Dotenv(),
   ],
   optimization: {
     minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
