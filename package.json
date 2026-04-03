@@ -8,7 +8,8 @@
     "build": "webpack --config webpack/webpack.build.cjs",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "format": "prettier --write 'src/**/*.{js,jsx,scss,css,json,md}'"
+    "format": "prettier --write 'src/**/*.{js,jsx,scss,css,json,md}'",
+    "deploy": "pnpm build && gh-pages -d dist"
   },
   "description": "TeskaLabs Training UI App",
   "private": true,
@@ -58,6 +59,7 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-react": "^7.37.5",
+    "gh-pages": "^6.3.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.7.0",
     "postcss": "^8.4.19",
